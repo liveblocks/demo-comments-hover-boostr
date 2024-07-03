@@ -2,44 +2,22 @@
   position: relative;
   z-index: 1;
   color: white;
-}
-
-.Header > div {
-  margin: 0 auto;
-  padding: 20px 16px;
-  max-width: 1200px;
+  background: #2F3743;
+  height: 60px;
+  padding: 0 32px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.HeaderLeft {
+.Avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
-  gap: 28px;
-}
-
-.HeaderLeft ul {
-  display: flex;
-  gap: 20px;
-}
-
-@media (max-width: 640px) {
-  .HeaderLeft ul {
-    display: none;
-  }
-}
-
-.HeaderLeft ul > li > a {
+  justify-content: center;
+  font-size: 12px;
   font-weight: 500;
-}
-
-.Header button {
-  background-color: #7af167;
-  color: black;
-  border-radius: 9999px;
-  height: 2.5rem;
-  padding: 0 16px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
 }

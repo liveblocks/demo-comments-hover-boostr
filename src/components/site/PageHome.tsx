@@ -1,9 +1,9 @@
-import Hero from "./Hero";
+import Content from "./Content";
 
 export async function PageHome() {
   return (
-    <main>
-      <Hero />
+    <main className="">
+      <Content />
     </main>
   );
 }

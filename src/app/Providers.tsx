@@ -7,7 +7,6 @@ export function Providers({ children }: PropsWithChildren) {
   return (
     <LiveblocksProvider
       authEndpoint="/api/liveblocks-auth"
-      // Get users' info from their ID
       resolveUsers={async ({ userIds }) => {
         const searchParams = new URLSearchParams(
           userIds.map((userId) => ["userIds", userId])

@@ -25,7 +25,7 @@ export function Toolbar({ ...props }) {
         <div className={styles.toolbarActions}>
           <NewThread>
             <Button variant="ghost" square>
-              <PlusIcon width={12} height={12} />
+              <PlusIcon width={28} height={28} />
             </Button>
           </NewThread>
         </div>

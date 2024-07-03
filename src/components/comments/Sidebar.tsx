@@ -64,8 +64,8 @@ function CreateThreadMessage() {
       Create a thread with the{" "}
       <PlusIcon
         style={{ display: "inline", marginTop: "-2px" }}
-        height={9}
-        width={9}
+        height={16}
+        width={16}
       />{" "}
       plus icon in the toolbar.
     </div>

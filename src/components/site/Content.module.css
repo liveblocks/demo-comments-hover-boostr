@@ -1,0 +1,73 @@
+.Container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 48px auto;
+  background: white;
+  min-height: 600px;
+  padding: 32px;
+  border-radius: 10px;
+}
+
+.Heading {
+  font-size: 24px;
+  font-weight: 500;
+  padding-bottom: 16px;
+}
+
+.TableContainer {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 -12px;
+}
+
+.TableHeader {
+  background: #F6F6F6;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 0 12px;
+  font-weight: 500;
+}
+
+.TableRow {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  border-bottom: 1px solid #F6F6F6;
+  padding: 0 12px;
+}
+
+.TableRow span {
+  display: flex;
+  align-items: center;
+}
+
+.TableRow span .ButtonComment {
+  opacity: 0;
+}
+
+.TableRow span:hover .ButtonComment {
+  opacity: 100;
+}
+
+.ButtonComment {
+  background: #FFF;
+  margin-left: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+.ButtonComment:hover {
+  background: #F6F6F6;
+}
+
+.TableLink {
+  color:rgb(104, 104, 253);
+  text-decoration: underline;
+}
