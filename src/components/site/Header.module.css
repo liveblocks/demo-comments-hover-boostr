@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1;
   color: white;
-  background: #2F3743;
+  background: #2f3743;
   height: 60px;
   padding: 0 32px;
   display: flex;
@@ -20,4 +20,8 @@
   justify-content: center;
   font-size: 12px;
   font-weight: 500;
+}
+
+.AvatarWrapper img {
+  border: 0;
 }

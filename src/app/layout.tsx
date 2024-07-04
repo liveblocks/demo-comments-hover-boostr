@@ -44,10 +44,7 @@ export default function RootLayout({
         />
       </head>
       <body className={archivo.variable + " " + inter.className}>
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

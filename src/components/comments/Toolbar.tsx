@@ -22,14 +22,6 @@ export function Toolbar({ ...props }) {
       data-hide-cursors
     >
       <div className={styles.toolbar}>
-        <div className={styles.toolbarActions}>
-          <NewThread>
-            <Button variant="ghost" square>
-              <PlusIcon width={28} height={28} />
-            </Button>
-          </NewThread>
-        </div>
-        <div className={styles.toolbarSeparator} />
         <ToolbarAvatars />
         <div className={styles.toolbarSeparator} />
         <div className={styles.toolbarActions}>

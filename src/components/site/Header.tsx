@@ -1,4 +1,9 @@
+"use client";
+
 import styles from "./Header.module.css";
+import { useSelf } from "@liveblocks/react/suspense";
+import { Avatar } from "@/components/comments/ToolbarAvatars";
+import { ClientSideSuspense } from "@liveblocks/react";
 
 export function Header() {
   return (
@@ -35,7 +40,18 @@ export function Header() {
           fill="#FE5000"
         />
       </svg>
-      <div className={styles.Avatar}>SF</div>
+      <ClientSideSuspense fallback={null}>
+        <MyAvatar />
+      </ClientSideSuspense>
     </header>
+  );
+}
+
+function MyAvatar() {
+  const self = useSelf();
+  return (
+    <div className={styles.AvatarWrapper}>
+      <Avatar src={self.info.avatar} name={self.info.name} />
+    </div>
   );
 }

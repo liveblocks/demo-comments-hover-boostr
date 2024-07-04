@@ -1,7 +1,18 @@
+"use client";
+
 import { Button } from "../comments/Button";
 import { NewThread } from "../comments/NewThread";
 import { PlusIcon } from "../icons/PlusIcon";
 import styles from "./Content.module.css";
+import { ROWS } from "@/components/site/database";
+import { InlineThread } from "@/components/comments/InlineThread";
+import { ClientSideSuspense } from "@liveblocks/react";
+
+const dollar = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
 
 export default function Content() {
   return (
@@ -14,227 +25,33 @@ export default function Content() {
           <span className={styles.TableRightAligned}>Open pipeline</span>
         </div>
         {/* Content */}
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $102,294
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $100,010
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $20,112
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $5,102
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $5,318
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $2,433
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $4,111
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $9,820
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $10,912
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $10,912
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $10,912
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
-        <div className={styles.TableRow}>
-          <span className={styles.TableLink}>
-            Activity
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $10,912
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-          <span className={styles.TableRightAligned}>
-            $0
-            <Button className={styles.ButtonComment} variant="ghost" square>
-              <PlusIcon width={16} height={16} />
-            </Button>
-          </span>
-        </div>
+        {ROWS.map(({ id, data }) => (
+          <div className={styles.TableRow} key={id}>
+            <a className={styles.TableLink} href={data.activity}>
+              Activity
+              <ClientSideSuspense fallback={<Placeholder />}>
+                <InlineThread rowId={id} columnType="activity" />
+              </ClientSideSuspense>
+            </a>
+            <span className={styles.TableRightAligned}>
+              {dollar.format(data.spend)}
+              <ClientSideSuspense fallback={<Placeholder />}>
+                <InlineThread rowId={id} columnType="spend" />
+              </ClientSideSuspense>
+            </span>
+            <span className={styles.TableRightAligned}>
+              {dollar.format(data.spend)}
+              <ClientSideSuspense fallback={<Placeholder />}>
+                <InlineThread rowId={id} columnType="pipeline" />
+              </ClientSideSuspense>
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
+}
+
+function Placeholder() {
+  return <div style={{ width: 34 }} />;
 }
