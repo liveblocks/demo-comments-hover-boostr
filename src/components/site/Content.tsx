@@ -1,8 +1,5 @@
 "use client";
 
-import { Button } from "../comments/Button";
-import { NewThread } from "../comments/NewThread";
-import { PlusIcon } from "../icons/PlusIcon";
 import styles from "./Content.module.css";
 import { ROWS } from "@/components/site/database";
 import { InlineThread } from "@/components/comments/InlineThread";
