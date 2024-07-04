@@ -4,6 +4,7 @@ import styles from "./Header.module.css";
 import { useSelf } from "@liveblocks/react/suspense";
 import { Avatar } from "@/components/comments/ToolbarAvatars";
 import { ClientSideSuspense } from "@liveblocks/react";
+import { Toolbar } from "../comments/Toolbar";
 
 export function Header() {
   return (
@@ -41,17 +42,8 @@ export function Header() {
         />
       </svg>
       <ClientSideSuspense fallback={null}>
-        <MyAvatar />
+        <Toolbar />
       </ClientSideSuspense>
     </header>
-  );
-}
-
-function MyAvatar() {
-  const self = useSelf();
-  return (
-    <div className={styles.AvatarWrapper}>
-      <Avatar src={self.info.avatar} name={self.info.name} />
-    </div>
   );
 }

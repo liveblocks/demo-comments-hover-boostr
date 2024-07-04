@@ -11,7 +11,7 @@ export function SidebarIcon(props: ComponentProps<"svg">) {
       {...props}
     >
       <path
-        fill="#212134"
+        fill="#fff"
         d="m2.4.1.1-.1h9.4l.1.1v2.2l-.1.1H2.5l-.1-.1V.1ZM0 4.9l.1-.1h9.4l.1.1v2.2l-.1.1H.1L0 7.1V4.9Zm2.5 4.7-.1.1v2.2l.1.1h9.4l.1-.1V9.7l-.1-.1H2.5Z"
       />
     </svg>

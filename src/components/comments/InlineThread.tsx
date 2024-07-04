@@ -43,11 +43,15 @@ function ThreadList({ thread }: { thread: ThreadData }) {
         <Avatar src={user.avatar} name={user.name} />
       </button>
       {open ? (
-        <Thread
-          className={styles.Thread}
-          thread={thread}
-          data-column-type={thread.metadata.columnType}
-        />
+        <>
+          <div className={styles.Backdrop} onClick={() => setOpen(false)} />
+          <Thread
+            onClick={(e) => e.stopPropagation()}
+            className={styles.Thread}
+            thread={thread}
+            data-column-type={thread.metadata.columnType}
+          />
+        </>
       ) : null}
     </span>
   );
@@ -73,11 +77,14 @@ function NewThreadComposer({
         <PlusIcon width={16} height={16} />
       </Button>
       {open ? (
-        <Composer
-          className={styles.Composer}
-          metadata={{ rowId, columnType }}
-          data-column-type={columnType}
-        />
+        <>
+          <div className={styles.Backdrop} onClick={() => setOpen(false)} />
+          <Composer
+            className={styles.Composer}
+            metadata={{ rowId, columnType }}
+            data-column-type={columnType}
+          />
+        </>
       ) : null}
     </span>
   );

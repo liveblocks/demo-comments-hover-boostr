@@ -26,8 +26,8 @@
 }
 
 .AvatarButton img {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
 }
 
 .Composer {
@@ -37,6 +37,15 @@
   width: 300px;
   box-shadow: var(--shadow);
   border-radius: 8px;
+}
+
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
 
 .Composer,

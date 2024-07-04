@@ -1,7 +1,6 @@
 import { Room } from "./Room";
 import { PageHome } from "@/components/site/PageHome";
 import { Cursors } from "@/components/cursors/Cursors";
-import { Comments } from "@/components/comments/Comments";
 import { Header } from "@/components/site/Header";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <Header />
       <PageHome />
       <Cursors />
-      <Comments />
     </Room>
   );
 }

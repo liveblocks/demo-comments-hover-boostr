@@ -23,8 +23,8 @@ export function ToolbarAvatars() {
 export function Avatar({ src, name }: { src: string; name: string }) {
   return (
     <img
-      width="28px"
-      height="28px"
+      width="20px"
+      height="20px"
       alt={name}
       src={src}
       className={styles.toolbarAvatar}
