@@ -10,10 +10,25 @@
   width: 28px;
   height: 28px;
   border-radius: 4px;
+  opacity: var(--button-opacity);
 }
 
 .ButtonComment:hover {
   background: #f6f6f6;
+}
+
+.AvatarButton {
+  appearance: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 4px;
+  opacity: var(--button-opacity);
+}
+
+.AvatarButton img {
+  width: 28px;
+  height: 28px;
 }
 
 .Composer {
@@ -43,17 +58,4 @@
 .Thread[data-column-type="pipeline"] {
   left: unset;
   right: 0;
-}
-
-.AvatarButton {
-  appearance: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  margin-left: 4px;
-}
-
-.AvatarButton img {
-  width: 28px;
-  height: 28px;
 }

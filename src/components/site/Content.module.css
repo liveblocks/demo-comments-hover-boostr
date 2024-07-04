@@ -47,13 +47,13 @@
   align-items: center;
 }
 
-.TableRow button {
-  opacity: 0;
+.TableRow {
+  --button-opacity: 0;
 }
 
-.TableRow span:hover button,
-.TableRow a:hover button {
-  opacity: 100;
+.TableRow span:hover,
+.TableRow a:hover {
+  --button-opacity: 1;
 }
 
 .TableLink {
