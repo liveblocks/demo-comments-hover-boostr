@@ -23,7 +23,6 @@
   padding: 0;
   margin: 0;
   margin-left: 4px;
-  opacity: var(--button-opacity);
 }
 
 .AvatarButton img {
