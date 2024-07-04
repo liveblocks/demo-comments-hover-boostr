@@ -36,6 +36,13 @@
   border-radius: 8px;
   overflow: hidden;
   z-index: 10;
+  left: 6px;
+}
+
+.Composer[data-column-type="pipeline"],
+.Thread[data-column-type="pipeline"] {
+  left: unset;
+  right: 0;
 }
 
 .AvatarButton {

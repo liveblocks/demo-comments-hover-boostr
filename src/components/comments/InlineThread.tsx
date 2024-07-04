@@ -42,7 +42,13 @@ function ThreadList({ thread }: { thread: ThreadData }) {
       <button onClick={() => setOpen(!open)} className={styles.AvatarButton}>
         <Avatar src={user.avatar} name={user.name} />
       </button>
-      {open ? <Thread className={styles.Thread} thread={thread} /> : null}
+      {open ? (
+        <Thread
+          className={styles.Thread}
+          thread={thread}
+          data-column-type={thread.metadata.columnType}
+        />
+      ) : null}
     </span>
   );
 }
@@ -70,6 +76,7 @@ function NewThreadComposer({
         <Composer
           className={styles.Composer}
           metadata={{ rowId, columnType }}
+          data-column-type={columnType}
         />
       ) : null}
     </span>
