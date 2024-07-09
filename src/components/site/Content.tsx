@@ -44,36 +44,30 @@ function Rows() {
         <div className={styles.TableRow} key={id}>
           <a className={styles.TableLink} href={data.activity}>
             Activity
-            {/*<ClientSideSuspense fallback={<Placeholder />}>*/}
             <InlineThread
               isLoading={isLoading}
               threads={threads || []}
               rowId={id}
               columnType="activity"
             />
-            {/*</ClientSideSuspense>*/}
           </a>
           <span className={styles.TableRightAligned}>
             {dollar.format(data.spend)}
-            {/*<ClientSideSuspense fallback={<Placeholder />}>*/}
             <InlineThread
               isLoading={isLoading}
               threads={threads || []}
               rowId={id}
               columnType="spend"
             />
-            {/*</ClientSideSuspense>*/}
           </span>
           <span className={styles.TableRightAligned}>
             {dollar.format(data.spend)}
-            {/*<ClientSideSuspense fallback={<Placeholder />}>*/}
             <InlineThread
               isLoading={isLoading}
               threads={threads || []}
               rowId={id}
               columnType="pipeline"
             />
-            {/*</ClientSideSuspense>*/}
           </span>
         </div>
       ))}
