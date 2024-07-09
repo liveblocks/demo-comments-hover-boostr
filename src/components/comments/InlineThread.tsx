@@ -1,3 +1,5 @@
+"use client";
+
 import { ColumnType } from "@/components/site/database";
 import { Composer, Thread } from "@liveblocks/react-ui";
 import styles from "./InlineThread.module.css";
@@ -5,27 +7,35 @@ import { PlusIcon } from "@/components/icons/PlusIcon";
 import { Button } from "@/components/comments/Button";
 import { useMemo, useState } from "react";
 import { ThreadData } from "@liveblocks/client";
-import { useUser, useThreads } from "@liveblocks/react/suspense";
+import { useUser } from "@liveblocks/react/suspense";
 import { Avatar } from "@/components/comments/ToolbarAvatars";
 
 export function InlineThread({
   rowId,
   columnType,
+  threads,
+  isLoading,
 }: {
   rowId: string;
   columnType: ColumnType;
+  threads: ThreadData[];
+  isLoading: boolean;
 }) {
-  const { threads } = useThreads({
-    query: {
-      metadata: { rowId, columnType },
-    },
-  });
+  if (isLoading) {
+    return <div style={{ width: 34 }} />;
+  }
 
-  if (threads.length === 0) {
+  const thread = useMemo(() => {
+    return threads.find(
+      (t) => t.metadata.rowId === rowId && t.metadata.columnType === columnType
+    );
+  }, [threads]);
+
+  if (!thread) {
     return <NewThreadComposer rowId={rowId} columnType={columnType} />;
   }
 
-  return <ThreadList thread={threads[0]} />;
+  return <ThreadList thread={thread} />;
 }
 
 function ThreadList({ thread }: { thread: ThreadData }) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { LiveblocksProvider } from "@liveblocks/react";
+import { LiveblocksProvider } from "@liveblocks/react/suspense";
 import { PropsWithChildren } from "react";
 
 export function Providers({ children }: PropsWithChildren) {
