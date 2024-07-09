@@ -3,10 +3,9 @@
 import { PropsWithChildren, useMemo } from "react";
 import { RoomProvider } from "@liveblocks/react/suspense";
 import { useSearchParams } from "next/navigation";
-import { ClientSideSuspense } from "@liveblocks/react";
 
 export function Room({ children }: PropsWithChildren) {
-  const roomId = useExampleRoomId("liveblocks:demo:comments-hover-boostr-2");
+  const roomId = useExampleRoomId("liveblocks:demo:comments-hover-boostr-demo");
 
   return (
     <RoomProvider

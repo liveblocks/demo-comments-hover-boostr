@@ -4,23 +4,9 @@ import { LiveblocksProvider } from "@liveblocks/react/suspense";
 import { PropsWithChildren } from "react";
 
 export function Providers({ children }: PropsWithChildren) {
-  // return children;
   return (
     <LiveblocksProvider
-      authEndpoint={async (room) => {
-        const response = await fetch("/api/liveblocks-auth", {
-          method: "POST",
-          headers: {
-            Authentication: "<your own headers here>",
-            "Content-Type": "application/json",
-          },
-          // Don't forget to pass `room` down. Note that it
-          // can be undefined when using Notifications.
-          body: JSON.stringify({ room }),
-        });
-        return await response.json();
-      }}
-      // authEndpoint="/api/liveblocks-auth"
+      authEndpoint="/api/liveblocks-auth"
       resolveUsers={async ({ userIds }) => {
         const searchParams = new URLSearchParams(
           userIds.map((userId) => ["userIds", userId])

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
 import { Suspense } from "react";
 import { Providers } from "@/app/Providers";
-// import { Providers } from "./Providers";
 
 const archivo = Archivo({
   subsets: ["latin"],
