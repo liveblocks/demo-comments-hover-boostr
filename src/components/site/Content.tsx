@@ -42,15 +42,15 @@ function Rows() {
     <div>
       {ROWS.map(({ id, data }) => (
         <div className={styles.TableRow} key={id}>
-          <a className={styles.TableLink} href={data.activity}>
-            Activity
+          <span className={styles.TableLink}>
+            <a href={data.activity}>Activity</a>
             <InlineThread
               isLoading={isLoading}
               threads={threads || []}
               rowId={id}
               columnType="activity"
             />
-          </a>
+          </span>
           <span className={styles.TableRightAligned}>
             {dollar.format(data.spend)}
             <InlineThread
