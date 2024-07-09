@@ -3,8 +3,7 @@
 import styles from "./Content.module.css";
 import { ROWS } from "@/components/site/database";
 import { InlineThread } from "@/components/comments/InlineThread";
-import { ClientSideSuspense } from "@liveblocks/react";
-import { useThreads } from "@liveblocks/react/suspense";
+import { useThreads } from "@liveblocks/react";
 import { ErrorBoundary } from "react-error-boundary";
 
 const dollar = new Intl.NumberFormat("en-US", {
@@ -33,7 +32,11 @@ export default function Content() {
 }
 
 function Rows() {
-  const { threads } = useThreads();
+  const { threads, isLoading, error } = useThreads();
+
+  if (error) {
+    return <div>Problem loading rows</div>;
+  }
 
   return (
     <div>
@@ -41,36 +44,39 @@ function Rows() {
         <div className={styles.TableRow} key={id}>
           <a className={styles.TableLink} href={data.activity}>
             Activity
-            <ClientSideSuspense fallback={<Placeholder />}>
-              <InlineThread
-                threads={threads}
-                rowId={id}
-                columnType="activity"
-              />
-            </ClientSideSuspense>
+            {/*<ClientSideSuspense fallback={<Placeholder />}>*/}
+            <InlineThread
+              isLoading={isLoading}
+              threads={threads || []}
+              rowId={id}
+              columnType="activity"
+            />
+            {/*</ClientSideSuspense>*/}
           </a>
           <span className={styles.TableRightAligned}>
             {dollar.format(data.spend)}
-            <ClientSideSuspense fallback={<Placeholder />}>
-              <InlineThread threads={threads} rowId={id} columnType="spend" />
-            </ClientSideSuspense>
+            {/*<ClientSideSuspense fallback={<Placeholder />}>*/}
+            <InlineThread
+              isLoading={isLoading}
+              threads={threads || []}
+              rowId={id}
+              columnType="spend"
+            />
+            {/*</ClientSideSuspense>*/}
           </span>
           <span className={styles.TableRightAligned}>
             {dollar.format(data.spend)}
-            <ClientSideSuspense fallback={<Placeholder />}>
-              <InlineThread
-                threads={threads}
-                rowId={id}
-                columnType="pipeline"
-              />
-            </ClientSideSuspense>
+            {/*<ClientSideSuspense fallback={<Placeholder />}>*/}
+            <InlineThread
+              isLoading={isLoading}
+              threads={threads || []}
+              rowId={id}
+              columnType="pipeline"
+            />
+            {/*</ClientSideSuspense>*/}
           </span>
         </div>
       ))}
     </div>
   );
-}
-
-function Placeholder() {
-  return <div style={{ width: 34 }} />;
 }

@@ -7,21 +7,29 @@ import { PlusIcon } from "@/components/icons/PlusIcon";
 import { Button } from "@/components/comments/Button";
 import { useMemo, useState } from "react";
 import { ThreadData } from "@liveblocks/client";
-import { useUser, useThreads } from "@liveblocks/react/suspense";
+import { useUser } from "@liveblocks/react/suspense";
 import { Avatar } from "@/components/comments/ToolbarAvatars";
 
 export function InlineThread({
   rowId,
   columnType,
   threads,
+  isLoading,
 }: {
   rowId: string;
   columnType: ColumnType;
   threads: ThreadData[];
+  isLoading: boolean;
 }) {
-  const thread = threads.find(
-    (t) => t.metadata.rowId === rowId && t.metadata.columnType === columnType
-  );
+  if (isLoading) {
+    return <div style={{ width: 34 }} />;
+  }
+
+  const thread = useMemo(() => {
+    return threads.find(
+      (t) => t.metadata.rowId === rowId && t.metadata.columnType === columnType
+    );
+  }, [threads]);
 
   if (!thread) {
     return <NewThreadComposer rowId={rowId} columnType={columnType} />;
