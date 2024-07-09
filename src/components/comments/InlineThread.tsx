@@ -1,3 +1,5 @@
+"use client";
+
 import { ColumnType } from "@/components/site/database";
 import { Composer, Thread } from "@liveblocks/react-ui";
 import styles from "./InlineThread.module.css";
@@ -11,21 +13,21 @@ import { Avatar } from "@/components/comments/ToolbarAvatars";
 export function InlineThread({
   rowId,
   columnType,
+  threads,
 }: {
   rowId: string;
   columnType: ColumnType;
+  threads: ThreadData[];
 }) {
-  const { threads } = useThreads({
-    query: {
-      metadata: { rowId, columnType },
-    },
-  });
+  const thread = threads.find(
+    (t) => t.metadata.rowId === rowId && t.metadata.columnType === columnType
+  );
 
-  if (threads.length === 0) {
+  if (!thread) {
     return <NewThreadComposer rowId={rowId} columnType={columnType} />;
   }
 
-  return <ThreadList thread={threads[0]} />;
+  return <ThreadList thread={thread} />;
 }
 
 function ThreadList({ thread }: { thread: ThreadData }) {
