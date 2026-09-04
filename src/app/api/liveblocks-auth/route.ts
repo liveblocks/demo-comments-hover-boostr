@@ -21,6 +21,7 @@ export async function POST(request: NextRequest) {
 
   // Use a naming pattern to allow access to rooms with a wildcard
   session.allow(`liveblocks:demo:*`, session.FULL_ACCESS);
+  session.allow(`hello-world*`, session.FULL_ACCESS);
 
   // Authorize the user and return the result
   const { body, status } = await session.authorize();
