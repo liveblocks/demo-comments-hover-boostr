@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { ComponentProps } from "react";
-import styles from "./Button.module.css";
+import styles from "./button.module.css";
 
 export function Button({
   variant = "primary",

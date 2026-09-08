@@ -1,10 +1,10 @@
 "use client";
 
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 import { useSelf } from "@liveblocks/react/suspense";
-import { Avatar } from "@/components/comments/ToolbarAvatars";
+import { Avatar } from "@/components/comments/toolbaravatars";
 import { ClientSideSuspense } from "@liveblocks/react";
-import { Toolbar } from "../comments/Toolbar";
+import { Toolbar } from "../comments/toolbar";
 
 export function Header() {
   return (

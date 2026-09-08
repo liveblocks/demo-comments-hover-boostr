@@ -1,6 +1,6 @@
 "use client";
 
-import { Cursor } from "./Cursor";
+import { Cursor } from "./cursor";
 import { useEffect } from "react";
 import { getCoordsFromElement } from "@/lib/coords";
 import {
