@@ -1,8 +1,8 @@
 "use client";
 
-import styles from "./Content.module.css";
+import styles from "./content.module.css";
 import { ROWS } from "@/components/site/database";
-import { InlineThread } from "@/components/comments/InlineThread";
+import { InlineThread } from "@/components/comments/inlinethread";
 import { useThreads } from "@liveblocks/react";
 import { ErrorBoundary } from "react-error-boundary";
 

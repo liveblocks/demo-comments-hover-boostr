@@ -1,14 +1,14 @@
 "use client";
 
-import styles from "./Sidebar.module.css";
+import styles from "./sidebar.module.css";
 import { Thread } from "@liveblocks/react-ui";
 import { useThreads } from "@liveblocks/react/suspense";
 import { useMemo } from "react";
-import { DocumentMagnifyingIcon } from "@/components/icons/DocumentMagnifyingIcon";
-import { DocumentCompleteIcon } from "@/components/icons/DocumentCompleteIcon";
+import { DocumentMagnifyingIcon } from "@/components/icons/documentmagnifyingicon";
+import { DocumentCompleteIcon } from "@/components/icons/documentcompleteicon";
 import { ThreadData } from "@liveblocks/client";
-import { CloseIcon } from "@/components/icons/CloseIcon";
-import { PlusIcon } from "@/components/icons/PlusIcon";
+import { CloseIcon } from "@/components/icons/closeicon";
+import { PlusIcon } from "@/components/icons/plusicon";
 
 type Props = {
   onClose: () => void;
