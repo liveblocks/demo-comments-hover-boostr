@@ -1,4 +1,4 @@
-import Content from "./Content";
+import Content from "./content";
 
 export async function PageHome() {
   return (

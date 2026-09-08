@@ -2,13 +2,13 @@
 
 import { ColumnType } from "@/components/site/database";
 import { Composer, Thread } from "@liveblocks/react-ui";
-import styles from "./InlineThread.module.css";
-import { PlusIcon } from "@/components/icons/PlusIcon";
-import { Button } from "@/components/comments/Button";
+import styles from "./inlinethread.module.css";
+import { PlusIcon } from "@/components/icons/plusicon";
+import { Button } from "@/components/comments/button";
 import { useMemo, useState } from "react";
 import { ThreadData } from "@liveblocks/client";
 import { useUser } from "@liveblocks/react/suspense";
-import { Avatar } from "@/components/comments/ToolbarAvatars";
+import { Avatar } from "@/components/comments/toolbaravatars";
 
 export function InlineThread({
   rowId,

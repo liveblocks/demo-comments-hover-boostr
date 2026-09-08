@@ -1,7 +1,7 @@
-import { Room } from "./Room";
-import { PageHome } from "@/components/site/PageHome";
-import { Cursors } from "@/components/cursors/Cursors";
-import { Header } from "@/components/site/Header";
+import { Room } from "./room";
+import { PageHome } from "@/components/site/pagehome";
+import { Cursors } from "@/components/cursors/cursors";
+import { Header } from "@/components/site/header";
 
 export default function Home() {
   return (

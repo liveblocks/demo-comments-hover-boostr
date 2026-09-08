@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
 import { Suspense } from "react";
-import { Providers } from "@/app/Providers";
+import { Providers } from "@/app/providers";
 
 const archivo = Archivo({
   subsets: ["latin"],
