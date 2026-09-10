@@ -5,7 +5,7 @@ import { RoomProvider } from "@liveblocks/react/suspense";
 import { useSearchParams } from "next/navigation";
 
 export function Room({ children }: PropsWithChildren) {
-  const roomId = useExampleRoomId("my-room-name-is-this");
+  const roomId = useExampleRoomId("hell-my-room-id");
 
   return (
     <RoomProvider
