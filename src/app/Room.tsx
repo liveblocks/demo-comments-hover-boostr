@@ -1,5 +1,6 @@
 "use client";
 
+import { nanoid } from "nanoid";
 import { PropsWithChildren, useMemo } from "react";
 import { RoomProvider } from "@liveblocks/react/suspense";
 import { useSearchParams } from "next/navigation";
@@ -25,9 +26,13 @@ function useExampleRoomId(roomId: string) {
   const params = useSearchParams();
   const exampleId = params?.get("exampleId");
 
+  const randomId = useMemo(() => nanoid(), []);
+
   const exampleRoomId = useMemo(() => {
-    return exampleId ? `${roomId}-${exampleId}` : roomId;
-  }, [roomId, exampleId]);
+    return exampleId
+      ? `${roomId}-${randomId}-${exampleId}`
+      : `${roomId}-${randomId}`;
+  }, [roomId, exampleId, randomId]);
 
   return exampleRoomId;
 }
