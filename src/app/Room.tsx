@@ -5,10 +5,10 @@ import { RoomProvider } from "@liveblocks/react/suspense";
 import { useSearchParams } from "next/navigation";
 import { generateRandomRoomName } from "@/lib/randomRoomName";
 
-const ROOM_ID_STORAGE_KEY = "liveblocks-room-id-v2";
+const ROOM_ID_STORAGE_KEY = "liveblocks-room-id-v3";
 
 export function Room({ children }: PropsWithChildren) {
-  const roomId = useRandomRoomId("my-fifth-id");
+  const roomId = useRandomRoomId("my-sixth-id");
 
   if (!roomId) {
     return null;
