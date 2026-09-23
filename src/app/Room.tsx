@@ -25,9 +25,13 @@ function useExampleRoomId(roomId: string) {
   const params = useSearchParams();
   const exampleId = params?.get("exampleId");
 
+  const randomId = useMemo(() => crypto.randomUUID(), []);
+
   const exampleRoomId = useMemo(() => {
-    return exampleId ? `${roomId}-${exampleId}` : roomId;
-  }, [roomId, exampleId]);
+    return exampleId
+      ? `${roomId}-${randomId}-${exampleId}`
+      : `${roomId}-${randomId}`;
+  }, [roomId, exampleId, randomId]);
 
   return exampleRoomId;
 }
